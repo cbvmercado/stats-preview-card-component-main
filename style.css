@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend Deca", "sans-serif";
+  background: #0a0c1b;
+  color: #fff;
+  line-height: 22px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", "sans-serif";
+}
+
+h1,
+h2 {
+  line-height: 44px;
+  margin-bottom: 20px;
+  letter-spacing: 0.1rem;
+}
+
+.insights {
+  color: #ab5fda;
+}
+
+.grid-container {
+  max-width: 1440px;
+  /* max-height: 500px; */
+  margin: 100px auto;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text-side image-side";
+  overflow: hidden;
+  background-color: #1c1938;
+}
+
+.right-col {
+  padding: 100px;
+  /* height: 100%; */
+  width: 85%;
+}
+
+.left-col {
+  background-image: url("/images/image-header-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+div.right-col > p {
+  line-height: 28px;
+  color: #78758e;
+}
+
+.stats {
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  line-height: 0%;
+}
+
+.stats h2 {
+  margin: 10px 0;
+}
+
+.stats span {
+  font-size: 12px;
+  color: #78758e;
+}
+
+.overlay {
+  position: relative;
+  z-index: 0;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(78, 70, 91);
+  opacity: 0.6;
+  /* !!! */
+  z-index: -1;
+}
+
+@media screen and (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "image-side"
+      "text-side";
+    text-align: center;
+    /* border-radius: 0; */
+  }
+  .stats {
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .right-col {
+    padding: 20px;
+    width: 100%;
+    margin: 40px 0;
+  }
+
+  #image-side {
+    order: 1;
+  }
+
+  #text-side {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
+  }
+  /* 
+  .left-col {
+    background-size: cover;
+  } */
+}
